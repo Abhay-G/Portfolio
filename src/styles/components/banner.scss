@@ -1,0 +1,65 @@
+.banner {
+    padding: 2% 8%;
+    overflow-x: hidden;
+    .banner-content {
+        position: relative;
+        .banner-inner {
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            flex-direction: column;
+            height: 70vh;
+            width: 80%;
+            .name {
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+            .heading {
+                font-weight: 400;
+                font-size: 7rem;
+                letter-spacing: 1.2px;
+                &.one {
+                }
+                &.two {
+                    margin-left: 10rem;
+                }
+            }
+        }
+        .cover {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease-out;
+            &.cover-github {
+                top: 10px;
+                right: 40%;
+                background-color: #e8ebff;
+            }
+            &.cover-mail {
+                bottom: 40%;
+                right: 20px;
+                background-color: #fde8e7;
+            }
+            &.cover-linkedin {
+                bottom: 20px;
+                left: 20px;
+                background-color: #e5f1f8;
+            }
+            img {
+                width: 70px;
+                transition: 0.3s ease-out;
+                &:hover {
+                    width: 60px;
+                }
+            }
+            &:hover {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    }
+}
