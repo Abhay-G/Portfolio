@@ -1,6 +1,7 @@
 import VectorBG from './components/VectorBG';
 import Navbar from './components/Navbar';
 import Banner from './components/Banner';
+import Info from './components/Info';
 import './styles/App.scss';
 function App() {
     return (
@@ -8,6 +9,7 @@ function App() {
             <VectorBG />
             <Navbar />
             <Banner />
+            <Info />
         </div>
     );
 }

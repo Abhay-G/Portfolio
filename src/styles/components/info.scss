@@ -1,0 +1,57 @@
+.info {
+    margin-top: 1.5rem;
+    .info-inner {
+        @include justify(space-between, center);
+        .info-left {
+            background-color: black;
+            height: 45vh;
+            width: 70%;
+            color: white;
+            .left-content {
+                @include justify(space-between, center);
+                padding: 2% 10%;
+                h2 {
+                    font-size: 4rem;
+                    font-weight: 300;
+                }
+                p {
+                    width: 75%;
+                    font-size: 1.4rem;
+                    letter-spacing: 1px;
+                    line-height: 1.8;
+                    text-align: left;
+                    margin-left: 3rem;
+                    color: grey;
+                }
+            }
+        }
+        .info-right {
+            background-color: #636c7d;
+            width: 30%;
+            height: 45vh;
+            position: relative;
+            @include justify(space-between, center);
+            .right-content {
+                padding: 2% 10%;
+                width: 100px;
+                h2 {
+                    font-size: 3rem;
+                    font-weight: 400;
+                }
+            }
+            img {
+                position: absolute;
+                width: 100px;
+                right: 50px;
+                bottom: 70px;
+                cursor: pointer;
+                border-radius: 100%;
+                transition: 0.3s ease;
+                &:hover {
+                    width: 110px;
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+}

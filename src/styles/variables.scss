@@ -6,3 +6,8 @@ $yellow: #fff3d8;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+@mixin justify($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
