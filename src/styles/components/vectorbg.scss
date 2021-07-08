@@ -3,19 +3,25 @@
     position: relative;
     svg {
     }
-    .vector1 {
+    #vector1 {
         position: absolute;
-        top: -30%;
+        top: -150px;
         left: -5%;
         width: 25%;
         z-index: -1;
+        @include media('<=phone') {
+            width: 200px;
+        }
     }
 
-    .vector2 {
+    #vector2 {
         position: absolute;
-        top: -100px;
+        top: -150px;
         right: 0%;
         width: 50%;
         z-index: -1;
+        @include media('<=phone') {
+            width: 500px;
+        }
     }
 }

@@ -1,0 +1,199 @@
+.projects {
+    padding: 2% 10%;
+    box-sizing: border-box;
+    position: relative;
+    @include media('<=phone') {
+        padding: 2% 5%;
+    }
+    // background-color: #f6f5f5;
+    h2 {
+        font-size: 7rem;
+        font-weight: 600;
+        &#projects {
+            margin: -4rem 0 3rem 5rem;
+        }
+        @include media('<=desktop') {
+            font-size: 5rem;
+        }
+        @include media('<=phone') {
+            font-size: 2.2rem;
+            &#projects {
+                margin: -1.5rem 0 1.5rem 0;
+            }
+        }
+    }
+    .project-row {
+        margin: 12% 0;
+        @include justify(space-between, center);
+        @include media('<=phone') {
+            flex-direction: column-reverse;
+        }
+        .project-desc {
+            width: 40%;
+            @include media('<=desktop') {
+                width: 50%;
+            }
+            @include media('<=phone') {
+                width: 100%;
+            }
+            p {
+                font-size: 2rem;
+                text-align: left;
+                letter-spacing: 1px;
+                line-height: 1.8;
+                color: grey;
+                @include media('<=desktop') {
+                    font-size: 1.15rem;
+                }
+                @include media('<=phone') {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                }
+            }
+            .tech-stack {
+                font-size: 2em;
+                line-height: 1.8;
+                color: $blue;
+                @include media('<=desktop') {
+                    font-size: 1.4rem;
+                }
+                @include media('<=phone') {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .project-img {
+            position: absolute;
+            width: 60%;
+            right: -200px;
+
+            @include media('<=phone') {
+                position: relative;
+                right: 0;
+                @include justify(center, center);
+                flex-direction: column;
+            }
+            img {
+                width: 100%;
+                max-height: 576px;
+                @include media('<=desktop') {
+                    width: 85%;
+                }
+                @include media('<=phone') {
+                    width: 300px;
+                }
+            }
+            .project-nav {
+                @include justify(center, center);
+                width: 80%;
+                margin-top: 2rem;
+
+                @include media('<=desktop') {
+                    width: 60%;
+                    margin-top: 1rem;
+                }
+                @include media('<=phone') {
+                    flex-direction: column;
+                    width: 300px;
+                    margin-top: 1rem;
+                }
+                a {
+                    text-decoration: none;
+                    color: black;
+                    &:after {
+                        height: 5px;
+                        top: 40%;
+                    }
+                    @include media('<=desktop') {
+                        &:after {
+                            height: 2.5px;
+                        }
+                    }
+                    @include media('<=phone') {
+                        &:after {
+                            height: 2px;
+                        }
+                    }
+                    h3 {
+                        font-size: 3rem;
+                        font-weight: 500;
+                        margin: 0 1rem;
+                        @include media('<=desktop') {
+                            font-size: 2rem;
+                        }
+                        @include media('<=phone') {
+                            font-size: 1.8rem;
+                            margin: 0;
+                        }
+                    }
+                }
+                p {
+                    font-size: 2.2rem;
+                    margin: 0 1rem;
+                    font-weight: 400;
+                    @include media('<=desktop') {
+                        font-size: 1.5rem;
+                    }
+                    @include media('<=phone') {
+                        display: none;
+                    }
+                }
+                svg {
+                    cursor: pointer;
+                    border-radius: 100%;
+                    border: 2px solid black;
+                    padding: 15px;
+                    margin: 0 1rem;
+                    width: 40px;
+                    height: 40px;
+                    transition: 0.3s ease;
+                    @include media('<=desktop') {
+                        padding: 5px;
+                    }
+                    @include media('<=phone') {
+                        width: 20px;
+                        height: 20px;
+                        margin: 15px 0;
+                    }
+                    &:hover {
+                        background-color: black;
+                        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+                        fill: white;
+                    }
+                }
+            }
+        }
+        &.reverse {
+            flex-direction: row-reverse;
+            @include media('<=phone') {
+                flex-direction: column-reverse;
+            }
+            .project-desc {
+                margin-bottom: 2rem;
+            }
+            .project-img {
+                position: absolute;
+                width: 60%;
+                left: -260px;
+                @include media('<=desktop') {
+                    left: -160px;
+                }
+                @include media('<=phone') {
+                    position: relative;
+                    left: 0;
+                    @include justify(center, center);
+                    flex-direction: column;
+                }
+            }
+            .project-nav {
+                @include justify(center, center);
+                width: 100%;
+                margin-top: 2rem;
+                margin-left: 10%;
+                @include media('<=desktop') {
+                    margin-left: 5%;
+                }
+            }
+        }
+    }
+}

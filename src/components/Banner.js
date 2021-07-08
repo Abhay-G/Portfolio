@@ -9,8 +9,17 @@ const Banner = () => {
             <div className='banner-content'>
                 <div className='banner-inner'>
                     <div className='name'>Abhay Gupta</div>
-                    <div className='heading one'>Web developer</div>
-                    <div className='heading two'>UI developer</div>
+                    <div className='heading one'>
+                        <a className='in-link' href=''>
+                            Web developer
+                        </a>{' '}
+                    </div>
+                    <div className='heading two'>
+                        {' '}
+                        <a className='in-link' href=''>
+                            UI developer
+                        </a>{' '}
+                    </div>
                 </div>
                 <div className='cover cover-github'>
                     <img className='github' src={github} alt='github link' />

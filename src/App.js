@@ -1,16 +1,18 @@
-import VectorBG from './components/VectorBG';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import Info from './components/Info';
+import Home from './components/Home';
 import './styles/App.scss';
 function App() {
     return (
-        <div className='hero'>
-            <VectorBG />
-            <Navbar />
-            <Banner />
-            <Info />
-        </div>
+        <Router>
+            <div className='hero'>
+                <Navbar />
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/projects/:projectId' component={Home} />
+                </Switch>
+            </div>
+        </Router>
     );
 }
 

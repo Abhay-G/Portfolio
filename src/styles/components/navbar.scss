@@ -1,11 +1,20 @@
+//transition: transform 1s cubic-bezier(0,1,.82,1);
 .nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1% 10%;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 2px;
+    box-sizing: border-box;
+    @include media('<=desktop') {
+        font-size: 1.2rem;
+    }
+    @include media('<=phone') {
+        font-size: 1rem;
+    }
     .left {
         svg {
         }
@@ -19,35 +28,18 @@
             padding: 0;
             a {
                 margin: 0 2rem;
+                text-decoration: none;
+                color: grey;
             }
+        }
+        @include media('<=phone') {
+            display: none;
         }
     }
     .right {
         a {
             text-decoration: none;
-            color: $blue;
-        }
-    }
-    a {
-        position: relative;
-        text-decoration: none;
-        color: grey;
-        &:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            display: block;
-            margin-top: 5px;
-            right: 0;
-            background: black;
-            transition: 0.4s ease;
-        }
-        &:hover {
-            &:after {
-                width: 100%;
-                left: 0;
-            }
+            color: grey;
         }
     }
 }
