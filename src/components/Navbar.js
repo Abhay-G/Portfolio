@@ -43,7 +43,9 @@ const Navbar = () => {
                     </motion.div>
 
                     <motion.a
-                        href='/'
+                        href='/resume.pdf'
+                        target='_blank'
+                        rel='noreferrer'
                         className='in-nav-link nav-items'
                         variants={fadeUp(100, 0.8)}
                     >
