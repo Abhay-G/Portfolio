@@ -2,7 +2,7 @@ import React from 'react';
 import Myphoto from '../assets/myphoto.jpeg';
 const About = () => {
     return (
-        <div className='about-section'>
+        <div id='about' className='about-section'>
             <div className='heading'>
                 <div className='line'></div>
                 <p id='next-category'>Next Category</p>

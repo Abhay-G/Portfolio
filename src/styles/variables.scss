@@ -1,6 +1,8 @@
 $blue: #636c7d;
 $green: #7a8377;
 $yellow: #fff3d8;
+$purple: #515070;
+$pink: #f7f3f0;
 
 @mixin gradient($color1, $color2) {
     background: -webkit-linear-gradient($color1, $color2);

@@ -1,18 +1,25 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import Home from './components/Home';
+import ProjectPage from './components/pages/ProjectPage';
+import Options from './components/pages/Options';
 import './styles/App.scss';
+import { AnimatePresence } from 'framer-motion';
 function App() {
+    const location = useLocation();
     return (
-        <Router>
-            <div className='hero'>
-                <Navbar />
-                <Switch>
+        <div className='hero'>
+            <AnimatePresence exitBeforeEnter>
+                <Switch location={location} key={location.key}>
                     <Route exact path='/' component={Home} />
-                    <Route exact path='/projects/:projectId' component={Home} />
+                    <Route
+                        exact
+                        path='/projects/:projectId'
+                        component={ProjectPage}
+                    />
+                    <Route exact path='/more/:optionId' component={Options} />
                 </Switch>
-            </div>
-        </Router>
+            </AnimatePresence>
+        </div>
     );
 }
 

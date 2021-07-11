@@ -4,9 +4,7 @@ import CircleType from 'circletype';
 import $ from 'jquery';
 const CircularText = ({ text }) => {
     useEffect(() => {
-        const circleType = new CircleType(
-            document.getElementById('rotated')
-        ).radius(20);
+        new CircleType(document.getElementById('rotated')).radius(20);
         $(window).on('scroll', function () {
             var offset = $(window).scrollTop();
             offset = offset * 0.4;
@@ -23,8 +21,14 @@ const CircularText = ({ text }) => {
     return (
         <>
             <div className='circular-text'>
-                <span id='rotated'>{text}</span>
+                <span id='rotated'> {text}</span>
                 <div className='arrow'>
+                    <a
+                        className='cover-link'
+                        href='mailto:abhayg.0704@gmail.com'
+                    >
+                        {''}
+                    </a>
                     <Arrow />
                 </div>
             </div>

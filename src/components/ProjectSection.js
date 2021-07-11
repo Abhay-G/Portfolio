@@ -3,7 +3,7 @@ import Project from './Project';
 import projects from '../utility/data';
 const ProjectSection = () => {
     return (
-        <div className='projects'>
+        <div id='projects'>
             <div className='line'></div>
             <p id='next-category'>Next Category</p>
             <div className='sec-heading'>
@@ -12,7 +12,11 @@ const ProjectSection = () => {
             </div>
             {projects.map((project) => {
                 return (
-                    <Project project={project} reverse={project.id % 2 === 0} />
+                    <Project
+                        key={project.id}
+                        project={project}
+                        reverse={project.id % 2 === 0}
+                    />
                 );
             })}
         </div>

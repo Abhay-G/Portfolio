@@ -1,27 +1,36 @@
 .vectors-bg {
     z-index: -10;
+
     position: relative;
-    svg {
-    }
+
     #vector1 {
         position: absolute;
-        top: -150px;
-        left: -5%;
-        width: 25%;
+        top: -100px;
+        left: -40%;
+        width: 100%;
         z-index: -1;
+
         @include media('<=phone') {
             width: 200px;
+            left: -10px;
+            top: -150px;
         }
     }
 
     #vector2 {
         position: absolute;
-        top: -150px;
-        right: 0%;
-        width: 50%;
+        top: 0;
+        right: 0;
+        width: 1005;
         z-index: -1;
+
+        @include media('<=desktop') {
+            right: 0%;
+            top: -100px;
+        }
         @include media('<=phone') {
-            width: 500px;
+            width: 200px;
+            display: none;
         }
     }
 }

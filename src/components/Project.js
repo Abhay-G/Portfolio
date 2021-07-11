@@ -18,7 +18,9 @@ const Project = ({ project, reverse }) => {
                             <h3>{name}</h3>
                         </Link>
                         <p>{category}</p>
-                        <RightArrow />
+                        <Link to={`/projects/${id}`}>
+                            <RightArrow />
+                        </Link>
                     </div>
                 </div>
             </div>

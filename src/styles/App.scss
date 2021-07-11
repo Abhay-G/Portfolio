@@ -11,7 +11,10 @@
 @import './components/about.scss';
 @import './components/contact.scss';
 @import './components/circularText.scss';
-
+@import './components/projectpage.scss';
+@import './components/options.scss';
+@import './components/card.scss';
+@import './components/education.scss';
 html {
     body {
         padding: 0;
@@ -22,27 +25,36 @@ html {
         overflow-x: hidden;
         font-family: 'Raleway', sans-serif;
         font-weight: 400;
+        // background-color: #f7f3f0;
         .hero {
             overflow-x: hidden;
             .line {
                 width: 100%;
-                height: 5px;
+                height: 4.5px;
                 background-color: black;
                 @include media('<=phone') {
                     height: 2px;
                 }
             }
+
             #next-category {
-                font-size: 3rem;
+                font-size: 2.5rem;
+                font-weight: 500;
                 @include media('<=phone') {
                     font-size: 1.8rem;
                 }
             }
+            a {
+                cursor: pointer;
+            }
+            li {
+                list-style: none;
+            }
 
             a.in-link {
+                cursor: pointer;
                 position: relative;
                 text-decoration: none;
-                color: grey;
                 &:after {
                     content: '';
                     position: absolute;
@@ -65,7 +77,6 @@ html {
             a.in-nav-link {
                 position: relative;
                 text-decoration: none;
-                color: grey;
                 &:after {
                     content: '';
                     position: absolute;

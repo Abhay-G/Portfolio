@@ -22,7 +22,7 @@ const Skills = () => {
         <div id='skill-section'>
             <div className='line'></div>
             <p id='next-category'>Next Category</p>
-            <h3>My Skills</h3>
+            <h2>My Skills</h2>
             <div className='skills'>
                 <ul className='skill-list'>
                     <li>

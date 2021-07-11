@@ -1,0 +1,61 @@
+.card {
+    padding: 5%;
+    box-sizing: border-box;
+    width: 600px;
+    height: 600px;
+    border: 2px solid $purple;
+    box-shadow: 0 0 5px 5px rgba($color: $purple, $alpha: 0.5);
+    background-color: $pink;
+    margin: 2rem;
+    @include media('<=desktop') {
+        width: 400px;
+        height: 450px;
+    }
+    @include media('<=phone') {
+        width: 300px;
+        height: 400px;
+    }
+    .card-content {
+        @include justify(center, flex-start);
+        flex-direction: column;
+        h3 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin: 2rem 0;
+            @include media('<=desktop') {
+                font-size: 2rem;
+            }
+            @include media('<=phone') {
+                font-size: 1.5rem;
+            }
+        }
+        p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            @include media('<=desktop') {
+                font-size: 1.1rem;
+            }
+            @include media('<=phone') {
+                font-size: 0.9rem;
+            }
+        }
+        ul {
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 0;
+            width: 100%;
+            @include media('<=desktop') {
+                font-size: 1.1rem;
+            }
+            @include media('<=phone') {
+                font-size: 0.9rem;
+            }
+            li {
+                a {
+                    width: 100%;
+                    color: red;
+                }
+            }
+        }
+    }
+}

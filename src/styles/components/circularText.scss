@@ -3,12 +3,13 @@
     position: absolute;
     color: black;
     @include justify(center, center);
-    top: 40%;
+    top: 20%;
     right: 10%;
     transform: translate(-50%, -50%);
     font-weight: 600;
     transition: 0.5s ease-out;
     @include media('<=desktop') {
+        font-size: 1.8rem;
         top: 20%;
         right: 10%;
     }
@@ -20,7 +21,19 @@
 }
 .arrow {
     position: fixed;
+    .cover-link {
+        display: block;
+        width: 60px;
+        height: 60px;
+        // background-color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
     svg {
+        cursor: pointer;
         fill: black;
         @include media('<=phone') {
             width: 30px;
