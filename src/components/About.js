@@ -3,7 +3,7 @@ import Myphoto from '../assets/myphoto.jpeg';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
-import { fadeUp, line, zoomIn, fadeUpDelay } from '../animation/basicAnimation';
+import { fadeUp, line, zoomIn } from '../animation/basicAnimation';
 const About = () => {
     const { ref, inView } = useInView({
         threshold: 0.5,

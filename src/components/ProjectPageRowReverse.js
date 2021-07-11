@@ -1,12 +1,11 @@
-import { Carousel } from 'react-bootstrap';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fadeUp } from '../animation/basicAnimation';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
-const CarouselComponent = ({ projectImages }) => {
+const ProjectPageRowReverse = ({ project }) => {
     const { ref, inView } = useInView({
-        rootMargin: '-200px',
+        threshold: 0.3,
         triggerOnce: true,
     });
     const animation1 = useAnimation();
@@ -16,26 +15,25 @@ const CarouselComponent = ({ projectImages }) => {
         }
     }, [inView, animation1]);
     return (
-        <div ref={ref}>
+        <div ref={ref} className='project-workflow'>
             <motion.div
-                className='projects-photos'
+                className='worflow-inner reverse'
                 animate={animation1}
                 initial='initial'
                 variants={fadeUp(200, 1)}
             >
-                <Carousel fade>
-                    {projectImages?.map((image, id) => (
-                        <Carousel.Item interval='3000' key={id}>
-                            <div className='img-container'>
-                                <img src={image} alt='' />
-                            </div>
-                        </Carousel.Item>
+                {project.codeSnippets &&
+                    project.codeSnippets.map((code, idx) => (
+                        <div key={idx} className='workflow'>
+                            <img className='table-img' src={code} alt='' />
+                        </div>
                     ))}
-                </Carousel>
+                <div className='workflow-text'>
+                    <p>{project.codedesc}</p>
+                </div>
             </motion.div>
-            ;
         </div>
     );
 };
 
-export default CarouselComponent;
+export default ProjectPageRowReverse;

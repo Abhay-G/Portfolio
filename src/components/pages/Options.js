@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Card from '../Card';
 import Focus from '../Focus';
 import Contact from '../Contact';
@@ -13,6 +13,7 @@ const Options = () => {
     const { optionId } = useParams();
     const [content, setContent] = useState([]);
     const [heading, setHeading] = useState('');
+    let history = useHistory();
     useEffect(() => {
         window.scrollTo(0, 0);
         if (optionId === 'morework') {
@@ -26,7 +27,9 @@ const Options = () => {
             setHeading('Education');
         }
     }, [optionId]);
-
+    function handleClick() {
+        history.push('/');
+    }
     return (
         <motion.div
             initial='initial'
@@ -38,9 +41,9 @@ const Options = () => {
                 <div className='projects-header'>
                     <motion.h1 variants={fadeUp(30, 1)}>{heading}</motion.h1>
 
-                    <Link className='in-nav-link option-close' to='/'>
+                    <button id='close' type='button' onClick={handleClick}>
                         close
-                    </Link>
+                    </button>
                     <motion.div variants={line} className='line'></motion.div>
                 </div>
                 {optionId === 'morework' && (

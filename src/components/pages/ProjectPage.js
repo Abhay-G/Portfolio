@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from '../Carousel';
 import Contact from '../Contact';
-import { Link, useParams } from 'react-router-dom';
+import ProjectPageRow from '../ProjectPageRow';
+import ProjectPageRowReverse from '../ProjectPageRowReverse';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import projects from '../../utility/detaileddata';
 import { motion } from 'framer-motion';
-import { line, fadeUp, stagger, opacity } from '../../animation/basicAnimation';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
+import { line, fadeUp, stagger, opacity } from '../../animation/basicAnimation';
+
 const ProjectPage = () => {
     const { projectId } = useParams();
     const [project, setProject] = useState({});
+    let history = useHistory();
     useEffect(() => {
         window.scrollTo(0, 0);
         setProject(projects.find((project) => project.id === projectId));
     }, [projectId]);
     const { ref, inView } = useInView({
-        threshold: 0.3,
+        rootMargin: '-200px',
         triggerOnce: true,
     });
     const animation1 = useAnimation();
@@ -24,6 +28,9 @@ const ProjectPage = () => {
             animation1.start('animate');
         }
     }, [inView, animation1]);
+    function handleClick() {
+        history.goBack();
+    }
     return (
         <motion.div
             initial='initial'
@@ -36,10 +43,9 @@ const ProjectPage = () => {
                     <motion.h1 variants={fadeUp(30, 0.8)}>
                         {project.name}
                     </motion.h1>
-
-                    <Link id='close' className='in-link' to='/'>
+                    <button id='close' type='button' onClick={handleClick}>
                         close
-                    </Link>
+                    </button>
 
                     <motion.div variants={line} className='line'></motion.div>
                     <div className='project-info'>
@@ -111,74 +117,50 @@ const ProjectPage = () => {
                 </div>
 
                 <Carousel projectImages={project.images} />
-                <div ref={ref} className='project-workflow'>
-                    <motion.div
-                        className='worflow-inner'
-                        animate={animation1}
-                        initial='initial'
-                        variants={fadeUp(100, 1)}
-                    >
-                        <div className='workflow'>
-                            <img
-                                className='table-img'
-                                src={project.projectPlan}
-                                alt=''
-                            />
-                        </div>
-                        <div className='workflow-text'>
-                            <p>{project.plandesc}</p>
-                        </div>
-                    </motion.div>
-                </div>
-                <div className='project-workflow'>
-                    <div className='worflow-inner reverse'>
-                        {project.codeSnippets &&
-                            project.codeSnippets.map((code, idx) => (
-                                <div key={idx} className='workflow'>
-                                    <img
-                                        className='table-img'
-                                        src={code}
-                                        alt=''
-                                    />
-                                </div>
-                            ))}
-                        <div className='workflow-text'>
-                            <p>{project.codedesc}</p>
-                        </div>
-                    </div>
-                </div>
+                <ProjectPageRow
+                    image={project.projectPlan}
+                    text={project.plandesc}
+                />
+                <ProjectPageRowReverse project={project} />
+
                 {project.formula && (
-                    <div className='project-workflow'>
-                        <div className='worflow-inner'>
-                            <div className='workflow'>
-                                <img
-                                    className='table-img'
-                                    src={project.formula}
-                                    alt=''
-                                />
-                            </div>
-                            <div className='workflow-text'>
-                                <p>{project.formuladesc}</p>
-                            </div>
-                        </div>
-                    </div>
+                    <ProjectPageRow
+                        image={project.formula}
+                        text={project.formuladesc}
+                    />
                 )}
-                <div className='next-project'>
+                <div ref={ref} className='next-project'>
                     <div className='next-project-inner'>
-                        <div className='line'></div>
-                        <p id='next-category'>
-                            {project.id === '4' ? 'Next' : 'Next Project'}
-                        </p>
-                        <Link
-                            className='in-link'
-                            to={
-                                project.id === '4'
-                                    ? '/'
-                                    : `/projects/${project.nextId}`
-                            }
+                        <motion.div
+                            className='line'
+                            animate={animation1}
+                            initial='initial'
+                            variants={line}
+                        ></motion.div>
+                        <motion.p
+                            id='next-category'
+                            animate={animation1}
+                            initial='initial'
+                            variants={fadeUp(100, 1)}
                         >
-                            {project.nextProject}
-                        </Link>
+                            {project.id === '4' ? 'Next' : 'Next Project'}
+                        </motion.p>
+                        <motion.div
+                            animate={animation1}
+                            initial='initial'
+                            variants={fadeUp(250, 0.8)}
+                        >
+                            <Link
+                                className='in-link'
+                                to={
+                                    project.id === '4'
+                                        ? '/'
+                                        : `/projects/${project.nextId}`
+                                }
+                            >
+                                {project.nextProject}
+                            </Link>
+                        </motion.div>
                     </div>
                 </div>
             </div>

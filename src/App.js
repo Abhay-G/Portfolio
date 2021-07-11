@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import Home from './components/Home';
 import ProjectPage from './components/pages/ProjectPage';
@@ -18,7 +17,7 @@ function App() {
                 innerScale={1}
                 outerScale={4}
             />
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence initial='false' exitBeforeEnter>
                 <Switch location={location} key={location.key}>
                     <Route exact path='/' component={Home} />
                     <Route

@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
-import { fadeUp, line, fadeUpDelay } from '../animation/basicAnimation';
+import { fadeUp, opacity } from '../animation/basicAnimation';
 const Info = () => {
     const { ref, inView } = useInView({
         threshold: 0.15,
@@ -19,7 +19,13 @@ const Info = () => {
         }
     }, [inView, animation1]);
     return (
-        <div ref={ref} className='info'>
+        <motion.div
+            ref={ref}
+            className='info'
+            animate={animation1}
+            initial='initial'
+            variants={opacity(1.2)}
+        >
             <div className='info-left'>
                 <div className='left-content'>
                     <motion.h2
@@ -93,7 +99,7 @@ const Info = () => {
                     </Link>
                 </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

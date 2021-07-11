@@ -60,24 +60,42 @@ const Banner = () => {
                         variants={zoomIn}
                         className='cover cover-github'
                     >
-                        <img
-                            className='github'
-                            src={github}
-                            alt='github link'
-                        />
+                        <a
+                            href='https://github.com/Abhay-G'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <img
+                                className='github'
+                                src={github}
+                                alt='github link'
+                            />
+                        </a>
                     </motion.div>
                     <motion.div variants={zoomIn} className='cover cover-mail'>
-                        <img className='mail' src={mail} alt='mail link' />
+                        <a
+                            target='_blank'
+                            rel='noreferrer'
+                            href='mailto:abhayg.0704@gmail.com'
+                        >
+                            <img className='mail' src={mail} alt='mail link' />
+                        </a>
                     </motion.div>
                     <motion.div
                         variants={zoomIn}
                         className='cover cover-linkedin'
                     >
-                        <img
-                            className='linkedin'
-                            src={linkedin}
-                            alt='linkedin link'
-                        />
+                        <a
+                            target='_blank'
+                            rel='noreferrer'
+                            href='https://www.linkedin.com/in/abhay-g07/'
+                        >
+                            <img
+                                className='linkedin'
+                                src={linkedin}
+                                alt='linkedin link'
+                            />
+                        </a>
                     </motion.div>
                 </motion.div>
             </div>

@@ -88,6 +88,7 @@ export const line = {
         transition: { type: 'tween', ease: easing, duration: 0.8 },
     },
 };
+
 export const exitVariant = {
     initial: {
         opacity: 0,

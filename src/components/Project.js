@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
 import { fadeUp, zoomIn } from '../animation/basicAnimation';
+
 const Project = ({ project, reverse }) => {
     const { id, name, description, techStack, img, category } = project;
     const { ref, inView } = useInView({
