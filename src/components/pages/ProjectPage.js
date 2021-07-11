@@ -5,6 +5,8 @@ import { Link, useParams } from 'react-router-dom';
 import projects from '../../utility/detaileddata';
 import { motion } from 'framer-motion';
 import { line, fadeUp, stagger, opacity } from '../../animation/basicAnimation';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
 const ProjectPage = () => {
     const { projectId } = useParams();
     const [project, setProject] = useState({});
@@ -12,6 +14,16 @@ const ProjectPage = () => {
         window.scrollTo(0, 0);
         setProject(projects.find((project) => project.id === projectId));
     }, [projectId]);
+    const { ref, inView } = useInView({
+        threshold: 0.3,
+        triggerOnce: true,
+    });
+    const animation1 = useAnimation();
+    useEffect(() => {
+        if (inView) {
+            animation1.start('animate');
+        }
+    }, [inView, animation1]);
     return (
         <motion.div
             initial='initial'
@@ -99,8 +111,13 @@ const ProjectPage = () => {
                 </div>
 
                 <Carousel projectImages={project.images} />
-                <div className='project-workflow'>
-                    <div className='worflow-inner'>
+                <div ref={ref} className='project-workflow'>
+                    <motion.div
+                        className='worflow-inner'
+                        animate={animation1}
+                        initial='initial'
+                        variants={fadeUp(100, 1)}
+                    >
                         <div className='workflow'>
                             <img
                                 className='table-img'
@@ -111,7 +128,7 @@ const ProjectPage = () => {
                         <div className='workflow-text'>
                             <p>{project.plandesc}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
                 <div className='project-workflow'>
                     <div className='worflow-inner reverse'>

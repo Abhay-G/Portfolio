@@ -9,26 +9,11 @@ import Skills from './Skills';
 import About from './About';
 import Contact from './Contact';
 import { motion } from 'framer-motion';
-const homeVariant = {
-    initial: {
-        opacity: 0,
-    },
-    animate: {
-        opacity: 1,
-        transition: { duration: 1 },
-    },
-    exit: {
-        x: '-100vw',
-        transition: {
-            duration: 0.2,
-            ease: 'easeInOut',
-        },
-    },
-};
+import { exitVariant } from '../animation/basicAnimation';
 const Home = () => {
     return (
         <motion.div
-            variants={homeVariant}
+            variants={exitVariant}
             initial='initial'
             animate='animate'
             exit='exit'

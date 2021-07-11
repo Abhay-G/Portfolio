@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { ReactComponent as Circle1 } from '../assets/blob.svg';
 import { ReactComponent as Circle2 } from '../assets/blob2.svg';
 import ReactLogo from '../assets/react.gif';
@@ -17,13 +17,52 @@ import Figma from '../assets/figma.svg';
 import Unity from '../assets/unity.svg';
 import Gsap from '../assets/gsap.png';
 import FM from '../assets/motion.png';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
+import { fadeUp, line, fadeUpDelay } from '../animation/basicAnimation';
 const Skills = () => {
+    const { ref, inView } = useInView({
+        threshold: 0.3,
+        triggerOnce: true,
+    });
+    const animation1 = useAnimation();
+
+    useEffect(() => {
+        if (inView) {
+            animation1.start('animate');
+        }
+    }, [inView, animation1]);
+
     return (
-        <div id='skill-section'>
-            <div className='line'></div>
-            <p id='next-category'>Next Category</p>
-            <h2>My Skills</h2>
-            <div className='skills'>
+        <div ref={ref} id='skill-section'>
+            <motion.div
+                className='line'
+                animate={animation1}
+                initial='initial'
+                variants={line}
+            ></motion.div>
+            <motion.p
+                id='next-category'
+                animate={animation1}
+                initial='initial'
+                variants={fadeUp(100, 1)}
+            >
+                Next Category
+            </motion.p>
+            <motion.h2
+                animate={animation1}
+                initial='initial'
+                variants={fadeUp(250, 0.8)}
+            >
+                My Skills
+            </motion.h2>
+            <motion.div
+                className='skills'
+                animate={animation1}
+                initial='initial'
+                variants={fadeUpDelay(300, 1, 1)}
+            >
                 <ul className='skill-list'>
                     <li>
                         <img src={ReactLogo} alt='NodeJS' />
@@ -99,7 +138,7 @@ const Skills = () => {
                 </ul>
                 <Circle1 id='c1' />
                 <Circle2 id='c2' />
-            </div>
+            </motion.div>
             <h5>and Learning ...</h5>
         </div>
     );

@@ -1,19 +1,61 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Myphoto from '../assets/myphoto.jpeg';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
+import { fadeUp, line, zoomIn, fadeUpDelay } from '../animation/basicAnimation';
 const About = () => {
+    const { ref, inView } = useInView({
+        threshold: 0.5,
+        triggerOnce: true,
+    });
+    const animation1 = useAnimation();
+
+    useEffect(() => {
+        if (inView) {
+            animation1.start('animate');
+        }
+    }, [inView, animation1]);
     return (
-        <div id='about' className='about-section'>
+        <div ref={ref} id='about' className='about-section'>
             <div className='heading'>
-                <div className='line'></div>
-                <p id='next-category'>Next Category</p>
-                <h2>About me</h2>
+                <motion.div
+                    className='line'
+                    animate={animation1}
+                    initial='initial'
+                    variants={line}
+                ></motion.div>
+                <motion.p
+                    id='next-category'
+                    animate={animation1}
+                    initial='initial'
+                    variants={fadeUp(100, 1)}
+                >
+                    Next Category
+                </motion.p>
+                <motion.h2
+                    animate={animation1}
+                    initial='initial'
+                    variants={fadeUp(250, 0.8)}
+                >
+                    About me
+                </motion.h2>
             </div>
             <div className='about-content'>
-                <div className='about-img'>
+                <motion.div
+                    className='about-img'
+                    animate={animation1}
+                    initial='initial'
+                    variants={zoomIn}
+                >
                     <img src={Myphoto} alt='' />
-                </div>
+                </motion.div>
                 <div className='about-text'>
-                    <p>
+                    <motion.p
+                        animate={animation1}
+                        initial='initial'
+                        variants={fadeUp(250, 0.8)}
+                    >
                         I am a developer who is in final year of studying at
                         Vellore Insititue of Technology Bhopal India. I have
                         been fascinated by web development and design since
@@ -30,7 +72,7 @@ const About = () => {
                         memorable and beautiful experience for them. The genre
                         do not matter as long as I can create something that
                         others find meaningful.
-                    </p>
+                    </motion.p>
                 </div>
             </div>
         </div>

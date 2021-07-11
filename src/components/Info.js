@@ -1,49 +1,98 @@
-import React from 'react';
+import { useEffect } from 'react';
 import downArrow from '../assets/downArrow.svg';
 import rightArrow from '../assets/arrow-right2.png';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
+import { fadeUp, line, fadeUpDelay } from '../animation/basicAnimation';
 const Info = () => {
+    const { ref, inView } = useInView({
+        threshold: 0.15,
+        triggerOnce: true,
+    });
+    const animation1 = useAnimation();
+
+    useEffect(() => {
+        if (inView) {
+            animation1.start('animate');
+        }
+    }, [inView, animation1]);
     return (
-        <div className='info'>
-            {/* <div className='info-inner'> */}
+        <div ref={ref} className='info'>
             <div className='info-left'>
                 <div className='left-content'>
-                    <h2 className='heading'>Full Stack Developer</h2>
-                    <p className='info-content'>
+                    <motion.h2
+                        className='heading'
+                        animate={animation1}
+                        initial='initial'
+                        variants={fadeUp(100, 1)}
+                    >
+                        Full Stack Developer
+                    </motion.h2>
+                    <motion.p
+                        className='info-content'
+                        animate={animation1}
+                        initial='initial'
+                        variants={fadeUp(200, 1)}
+                    >
                         I can handle the all the work of servers, routes,
                         databases and clients. I can also make wonderfull UIs
                         and amazing user experience and that's what make me a
                         Full Stack Developer.
-                    </p>
+                    </motion.p>
                     <div className='hidden-more'>
-                        <h3>More about me</h3>
-                        <Link
-                            to='about'
-                            activeClass='active'
-                            spy={true}
-                            smooth={true}
-                            offset={0}
-                            duration={2000}
+                        <motion.h3
+                            animate={animation1}
+                            initial='initial'
+                            variants={fadeUp(100, 1)}
                         >
-                            <img src={rightArrow} alt='' />
-                        </Link>
+                            More about me
+                        </motion.h3>
+                        <motion.div
+                            animate={animation1}
+                            initial='initial'
+                            variants={fadeUp(200, 1.2)}
+                        >
+                            <Link
+                                to='about'
+                                activeClass='active'
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={2000}
+                            >
+                                <img src={rightArrow} alt='' />
+                            </Link>
+                        </motion.div>
                     </div>
                 </div>
             </div>
             <div className='right-content'>
-                <h2>more about me</h2>
-                <Link
-                    to='about'
-                    activeClass='active'
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={2000}
+                <motion.h2
+                    animate={animation1}
+                    initial='initial'
+                    variants={fadeUp(100, 1)}
                 >
-                    <img src={downArrow} alt='' />
-                </Link>
+                    more about me
+                </motion.h2>
+                <motion.div
+                    animate={animation1}
+                    initial='initial'
+                    variants={fadeUp(200, 1.2)}
+                >
+                    <Link
+                        to='about'
+                        activeClass='active'
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={2000}
+                    >
+                        <img src={downArrow} alt='' />
+                    </Link>
+                </motion.div>
             </div>
-            {/* </div> */}
         </div>
     );
 };
