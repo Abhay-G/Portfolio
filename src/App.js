@@ -7,7 +7,19 @@ import { AnimatePresence } from 'framer-motion';
 import AnimatedCursor from 'react-animated-cursor';
 function App() {
     const location = useLocation();
-
+    console.log(
+        `%c 
+██╗  ██╗███████╗██╗     ██╗      ██████╗     ██╗    ██╗ ██████╗ ██████╗ ██╗     ██████╗
+██║  ██║██╔════╝██║     ██║     ██╔═══██╗    ██║    ██║██╔═══██╗██╔══██╗██║     ██╔══██╗
+███████║█████╗  ██║     ██║     ██║   ██║    ██║ █╗ ██║██║   ██║██████╔╝██║     ██║  ██║
+██╔══██║██╔══╝  ██║     ██║     ██║   ██║    ██║███╗██║██║   ██║██╔══██╗██║     ██║  ██║
+██║  ██║███████╗███████╗███████╗╚██████╔╝    ╚███╔███╔╝╚██████╔╝██║  ██║███████╗██████╔╝
+╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝ `,
+        `font-family: monospace`
+    );
+    console.log(
+        'Hi there, I see you are a man of culture as well. Lets Connect, I love working with like minded people.'
+    );
     return (
         <div className='hero'>
             <AnimatedCursor
