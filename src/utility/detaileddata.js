@@ -11,6 +11,7 @@ const projectsInfo = [
         brief: 'This a a Full Stack web app which lets you share your secrets and other moments freely while being anonymous. You can share your post, share pictures, comment on other people posts, react on them and more. You can delete your post or edit them as you like. I have also implemented google Auth for hassle free login and email verification for our old schoolers.',
         date: '2021',
         location: 'Bhopal',
+        link: 'https://www.mumble.games/',
         images: [
             'https://res.cloudinary.com/doy1foyff/image/upload/v1625817510/mumble1_vryywa.png',
             'https://res.cloudinary.com/doy1foyff/image/upload/v1625818926/mumble2_ab2zoy.png',
@@ -40,6 +41,7 @@ const projectsInfo = [
         brief: 'This is a react webapp that helps users to search github users and organizations by their name. GFind provides all the important informations such as name, location, hireable, bio, followers, gists, recent repos, and much more. You can also visit that persons original github profile if you want. I have made this while I was learning about react.',
         date: '2021',
         location: 'Bhopal',
+        link: 'https://githubfinder7474.netlify.app/',
         images: [
             'https://res.cloudinary.com/doy1foyff/image/upload/v1622824626/screely-1622387329039_loxgjz.png',
             'https://res.cloudinary.com/doy1foyff/image/upload/v1622824626/screely-1622387418999_irlh4t.png',
@@ -65,6 +67,7 @@ const projectsInfo = [
         brief: 'A DSA based project integrated with web development that gives solutions to your sudoku with backtracking and also lets you solve randomly generated sudokus and then practice on them.',
         date: '2021',
         location: 'Bhopal',
+        link: 'https://yoursudoku.netlify.app/',
         images: [
             'https://res.cloudinary.com/doy1foyff/image/upload/v1625852589/yoursudoku2_zu7k8e.png',
             'https://res.cloudinary.com/doy1foyff/image/upload/v1625852588/yoursudoku_zwpmik.png',
@@ -91,6 +94,7 @@ const projectsInfo = [
         brief: 'It is a 2d top-down shooter game with a dark story and cartoonish characters. I used Unity for game development, Photoshop for designing characters and levels. This was a Team Project for project exhibition in college in second year of my college. It was my first project where I worked with a team and acted as a team lead. I assigned task to each member and gave my all also while motivating others to do the same.',
         date: '2019',
         location: 'Bhopal',
+        link: 'https://abhay07.itch.io/kryptoblaze',
         images: [
             'https://res.cloudinary.com/doy1foyff/image/upload/v1625859301/kryptoblaze4_qgwrqu.png',
             'https://res.cloudinary.com/doy1foyff/image/upload/v1625859305/kryptoblaze2_c9sg3c.png',

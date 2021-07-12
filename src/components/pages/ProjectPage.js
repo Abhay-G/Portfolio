@@ -46,6 +46,16 @@ const ProjectPage = () => {
                     <button id='close' type='button' onClick={handleClick}>
                         close
                     </button>
+                    <a
+                        id='projectLink'
+                        className='in-nav-link'
+                        type='button'
+                        href={project.link}
+                        target='_blank'
+                        rel='noreferrer'
+                    >
+                        Project Link
+                    </a>
 
                     <motion.div variants={line} className='line'></motion.div>
                     <div className='project-info'>
