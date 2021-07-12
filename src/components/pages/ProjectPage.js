@@ -29,7 +29,7 @@ const ProjectPage = () => {
         }
     }, [inView, animation1]);
     function handleClick() {
-        history.goBack();
+        history.push('/');
     }
     return (
         <motion.div

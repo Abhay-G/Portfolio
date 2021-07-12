@@ -28,7 +28,7 @@ const Options = () => {
         }
     }, [optionId]);
     function handleClick() {
-        history.push('/');
+        history.goBack();
     }
     return (
         <motion.div
