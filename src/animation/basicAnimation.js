@@ -60,9 +60,10 @@ export const fadeUpDelay = (y, d, delay) => {
     };
 };
 export const zoomIn = {
-    initial: { scale: 0 },
+    initial: { scale: 0, opacity: 0 },
     animate: {
         scale: 1,
+        opacity: 1,
         transition: { duration: 1, type: 'tween', ease: easing },
     },
 };
@@ -88,7 +89,13 @@ export const line = {
         transition: { type: 'tween', ease: easing, duration: 0.8 },
     },
 };
-
+export const noanimation = {
+    initial: false,
+    animate: {
+        opacity: 1,
+        y: 0,
+    },
+};
 export const exitVariant = {
     initial: {
         opacity: 0,

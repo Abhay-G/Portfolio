@@ -1,10 +1,10 @@
-import React from 'react';
 import github from '../assets/github.png';
 import mail from '../assets/mail.png';
 import linkedin from '../assets/linkedin.png';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { fadeUp, zoomIn, stagger } from '../animation/basicAnimation';
+
 const Banner = () => {
     return (
         <div className='banner'>
@@ -15,11 +15,11 @@ const Banner = () => {
                     animate='animate'
                     className='banner-inner'
                 >
-                    <motion.div variants={fadeUp(300, 1)} className='name'>
+                    <motion.div variants={fadeUp(100, 1)} className='name'>
                         Abhay Gupta
                     </motion.div>
                     <motion.div
-                        variants={fadeUp(300, 1)}
+                        variants={fadeUp(100, 1)}
                         className='heading one'
                     >
                         <Link
@@ -35,7 +35,7 @@ const Banner = () => {
                         </Link>
                     </motion.div>
                     <motion.div
-                        variants={fadeUp(300, 1)}
+                        variants={fadeUp(100, 1)}
                         className='heading two'
                     >
                         <Link
