@@ -8,7 +8,7 @@ const projectsInfo = [
     {
         id: '1',
         name: 'Mumble',
-        brief: 'This a a Full Stack web app which lets you share your secrets and other moments freely while being anonymous. You can share your post, share pictures, comment on other people posts, react on them and more. You can delete your post or edit them as you like. I have also implemented google Auth for hassle free login and email verification for our old schoolers.',
+        brief: 'This a a Full Stack web app which lets you share your secrets and other moments freely while being anonymous. You can share your post, share pictures, comment on other people posts, react on them and more. You can delete your post or edit them as you like. I have also implemented google Auth for hassle free login and email verification for our old schoolers. It was the first project where I used Gsap animations and I was not that much good at it then. So you might find animation a little bit slow. ',
         date: '2021',
         location: 'Bhopal',
         link: 'https://www.mumble.games/',

@@ -57,7 +57,7 @@ const About = () => {
                         variants={fadeUp(250, 0.8)}
                     >
                         I am a developer who is in final year of studying at
-                        Vellore Insititue of Technology Bhopal India. I have
+                        Vellore Institute of Technology Bhopal India. I have
                         been fascinated by web development and design since
                         before I even knew what it meant. It started for me at
                         the age of seventeen, when i realised how technology can
