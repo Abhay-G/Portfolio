@@ -36,7 +36,9 @@ const More = () => {
                         <h2>More Work</h2>
                     </Link>
                     <h4>Learn more</h4>
-                    <img src={arrowright} alt='' />
+                    <Link to='/more/morework'>
+                        <img id='img-link' src={arrowright} alt='' />
+                    </Link>
                 </motion.div>
                 <motion.div
                     className='more-content'
@@ -48,7 +50,9 @@ const More = () => {
                         <h2>Current Focus</h2>
                     </Link>
                     <h4>Learn more</h4>
-                    <img src={arrowright} alt='' />
+                    <Link to='/more/focus'>
+                        <img id='img-link' src={arrowright} alt='' />
+                    </Link>
                 </motion.div>
                 <motion.div
                     className='more-content'
@@ -60,7 +64,9 @@ const More = () => {
                         <h2>Education</h2>
                     </Link>
                     <h4>Learn more</h4>
-                    <img src={arrowright} alt='' />
+                    <Link to='/more/education'>
+                        <img id='img-link' src={arrowright} alt='' />
+                    </Link>
                 </motion.div>
             </div>
         </motion.div>

@@ -69,6 +69,11 @@
             }
             img {
                 margin-right: 5rem;
+                transition: 0.3s ease;
+
+                &:hover {
+                    transform: scale(0.6);
+                }
                 @include media('<=phone') {
                     width: 50px;
                     margin: 0 10px;

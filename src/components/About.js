@@ -61,7 +61,7 @@ const About = () => {
                         been fascinated by web development and design since
                         before I even knew what it meant. It started for me at
                         the age of seventeen, when i realised how technology can
-                        change buisnesses. I believe that visual communication
+                        change businesses. I believe that visual communication
                         have the opportunity of conveying the abstract in a way
                         that is not possible through other means of
                         communication. The results that people see in your
@@ -70,7 +70,7 @@ const About = () => {
                         shop. They search the internet to know about the product
                         or service before purchasing. So I love to create
                         memorable and beautiful experience for them. The genre
-                        do not matter as long as I can create something that
+                        does not matter as long as I can create something that
                         others find meaningful.
                     </motion.p>
                 </div>

@@ -43,8 +43,8 @@ const Info = () => {
                         variants={fadeUp(200, 1)}
                     >
                         I can handle all the work of servers, routes, databases
-                        and clients. I can also make wonderfull UIs and amazing
-                        user experience and that's what make me a Full Stack
+                        and clients. I can also make wonderful UIs and amazing
+                        user experience and that's what makes me a Full Stack
                         Developer.
                     </motion.p>
                     <div className='hidden-more'>
